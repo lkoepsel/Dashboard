@@ -13,6 +13,23 @@
     <div class="content">
       <div class="card-grid">
 
+        <!-- Card 0 -->
+        <div class="card">
+          <p class="card-title">
+            <img src = "lightbulb.svg" alt="Light Bulb image"/>
+            Built-in LED</p>
+          <p>
+            <a href="on0"><button class="button-on">
+              <i><img src = "switch-closed.svg" alt="closed switch image "/></i>
+            </button></a>
+            <a href="off0"><button class="button-off">
+              <i><img src = "switch-open.svg" alt="open switch image"/></i>
+            </button></a>
+          </p>
+          <p class="state">State: %STATE0%</p>
+        </div>
+        <!-- End of Card 0 -->
+
         <!-- Card 1 -->
         <div class="card">
           <p class="card-title">
@@ -35,8 +52,8 @@
           <p class="card-title">
             <img src = "lightbulb.svg" alt="Light Bulb image"/>
             LED 2</p>
-              <p><span id="textSliderValue">%SLIDERVALUE%</span></p>
               <p><input type="range" onchange="updateSliderPWM(this)" id="pwmSlider" min="0" max="255" value="%SLIDERVALUE%" step="1" class="slider"></p>
+              <p><span id="textSliderValue">%SLIDERVALUE%</span></p>
             <script>
             function updateSliderPWM(element) {
               var sliderValue = document.getElementById("pwmSlider").value;

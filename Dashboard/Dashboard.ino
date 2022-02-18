@@ -1,5 +1,6 @@
 /*
   Dashboard.ino creates a WiFi access point and starts the Asynch Server
+  If you are adding code here, you are probably doing something wrong.
 */
 
 #include <WiFi.h>
@@ -8,6 +9,9 @@
 #include <SPIFFS.h>
 #include "arduino_secrets.h"
 #include "serve.h"
+#include "card_0.h"
+#include "card_1.h"
+#include "card_2.h"
 
 // Serial Port Constants and Variables
 #define SERIAL_BAUD 921600
@@ -31,6 +35,7 @@ void setup() {
     return;
     }
     // Card 1: configure LED ON/OFF properties
+    pinMode(LED0, OUTPUT);
     pinMode(LED1, OUTPUT);
 
     // Card 2: configure GPIO PWM properties
