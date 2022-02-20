@@ -8,8 +8,7 @@ Most of the documentation will be on my website:
 * [wellys.com](https://wellys.com/posts/esp32_modules/)
 
 ## Code:
-Here is a high level approach to adding to this code:
-Each new sensor will require a *card*. Cards are sections on the homepage which either report a value or allow a control to make a change on the ESP32 (for example, a slider on a card, dims an LED).
+Here is a high level approach to adding to this code. Each new sensor will require a *card*. Cards are sections on the homepage which either report a value or allow a control to make a change on the ESP32 (for example, a slider on a card, dims an LED).
 To add a card, you need to do the following:
 1) Add card_n.h and card_n.cpp files, typically its best to duplicate an existing card and make changes to it.
 2) Add card_n content to index.html, again, duplicate and edit a card section on the index.html

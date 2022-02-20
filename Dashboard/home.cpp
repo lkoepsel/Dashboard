@@ -34,4 +34,14 @@ void home(AsyncWebServer *server) {
     request->send(SPIFFS, "/switch-open.svg", "image/svg+xml");
     });
 
+    // Route to load gauge javascript file
+    server->on("/gauge.min.js", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(SPIFFS, "/gauge.min.js", "text/script");
+    });
+
+    // Route to load local javascript file
+    server->on("/script.js", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(SPIFFS, "/script.js", "text/script");
+    });
+
 }

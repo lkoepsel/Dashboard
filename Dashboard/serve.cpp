@@ -19,4 +19,8 @@ void serve(AsyncWebServer *server) {
     //****** Card 2: GPIO/PWM Slider ******
     // Send a GET request to /slider?value=<inputMessage>
     card_2(server);
+
+    //****** Card 3: Temperature ******
+    // TBD
+    card_3(server);
 }

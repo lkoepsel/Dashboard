@@ -11,6 +11,7 @@
 #include "card_0.h"
 #include "card_1.h"
 #include "card_2.h"
+#include "card_3.h"
 
 // Card processor
 String processor(const String& var);
