@@ -11,4 +11,8 @@ void home(AsyncWebServer *server) {
 
     server->serveStatic("/", LittleFS, "/");
 
+    server->onNotFound([](AsyncWebServerRequest *request){
+        request->send(404, "text/html", "<h1>The file or content was not found.</h1>");
+    });
+
 }
