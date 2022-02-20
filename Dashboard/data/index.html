@@ -55,16 +55,6 @@
             LED 2</p>
               <p><input type="range" onchange="updateSliderPWM(this)" id="pwmSlider" min="0" max="255" value="%SLIDERVALUE%" step="1" class="slider"></p>
               <p><span id="textSliderValue">%SLIDERVALUE%</span></p>
-            <script>
-            function updateSliderPWM(element) {
-              var sliderValue = document.getElementById("pwmSlider").value;
-              document.getElementById("textSliderValue").innerHTML = sliderValue;
-              console.log(sliderValue);
-              var xhr = new XMLHttpRequest();
-              xhr.open("GET", "/slider?value="+sliderValue, true);
-              xhr.send();
-            }
-            </script>
         </div>
         <!-- End of Card 2 -->
 

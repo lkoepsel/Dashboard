@@ -18,3 +18,4 @@ build
 *~
 *.eeprom
 *secrets*
+gauge.min.js

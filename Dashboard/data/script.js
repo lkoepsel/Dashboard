@@ -1,3 +1,15 @@
+// ***** Start ***** card_2 script functions 
+function updateSliderPWM(element) {
+  var sliderValue = document.getElementById("pwmSlider").value;
+  document.getElementById("textSliderValue").innerHTML = sliderValue;
+  console.log(sliderValue);
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/slider?value="+sliderValue, true);
+  xhr.send();
+}
+// ***** End ***** card_2 script functions 
+
+// ***** Start ***** card_3 script functions 
 // Get current sensor readings when the page loads  
 window.addEventListener('load', getReadings);
 
@@ -138,3 +150,4 @@ if (!!window.EventSource) {
     gaugeHum.value = myObj.humidity;
   }, false);
 }
+// ***** End ***** card_3 script functions 

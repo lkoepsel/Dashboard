@@ -42,10 +42,5 @@ String processor(const String& var){
       return sliderValue;
     }
 
-    // Card 3 Processing
-    if (var == "SLIDERVALUE"){
-      return sliderValue;
-    }
-
     return String();
 }
