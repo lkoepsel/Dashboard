@@ -4,9 +4,10 @@ Based the ESP32 SoC using the Arduino Framework, Random Nerd Tutorials and the E
 2) This dashboard is setup as a *soft access point* with the ESP32. This means the application will serve up the dashboard locally and doesn't access the internet.
 3) Like RNT's example, this dashboard uses the concept of *cards*, with this approach using one card per file (actually two files card_n.h and card_n.cpp).
 
-Most of the documentation will be on my website:
-* [wellys.com](https://wellys.com/posts/esp32_modules/)
-
+Additional information for this project will be on my website:
+* [wellys.com - ESP32 Modules](https://wellys.com/posts/esp32_modules/)
+* [wellys.com - ESP32 Issues](https://wellys.com/posts/esp32_issues/)
+* [wellys.com - ESP32 Using arduino-cli](https://wellys.com/posts/esp32_cli/)
 ## Code:
 Here is a high level approach to adding to this code. Each new sensor will require a *card*. Cards are sections on the homepage which either report a value or allow a control to make a change on the ESP32 (for example, a slider on a card, dims an LED).
 To add a card, you need to do the following:
@@ -44,4 +45,4 @@ Here are the detailed steps to adding a new card to the Website. (*It doesn't in
 * **data/index.html**: each card requires a card section, similar to *card_n*, find one that is similar...
 * **data/script.js**(optional): if the sensor or dial requires an event, you will need to add javascript code to manage it in the script.js file. 
 ### 220217: Using canvas-gauges
-The [canvas-gauges](https://github.com/Mikhus/canvas-gauges) library is great for embedded projects. There are two files which are not in the git folder and are not tracked.
+The [canvas-gauges](https://github.com/Mikhus/canvas-gauges) library is great for embedded projects. There are two files which are not in the git folder and are not tracked, *gauge.min.js* and *gauge.min.js.map*. Both of these files are in the root directory of the canvas-gauges release. Download the latest from github, extract the folder and copy the two files in to the data folder.
