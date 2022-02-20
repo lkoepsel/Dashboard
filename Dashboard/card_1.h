@@ -2,7 +2,7 @@
 #define CARD_1
 
 #include <ESPAsyncWebServer.h>
-#include <SPIFFS.h>
+#include <LittleFS.h>
 #include "processor.h"
 
 // ON1/OFF1 Properties

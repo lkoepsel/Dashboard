@@ -6,7 +6,7 @@
 #include <WiFi.h>
 #include <WiFiAP.h>
 #include <ESPAsyncWebServer.h>
-#include <SPIFFS.h>
+#include <LittleFS.h>
 #include <Arduino_JSON.h>
 
 #include "arduino_secrets.h"
@@ -15,6 +15,8 @@
 #include "card_1.h"
 #include "card_2.h"
 #include "card_3.h"
+
+// switch from SPIFFS to LittleFS
 
 // Serial Port Constants and Variables
 #define SERIAL_BAUD 921600
@@ -40,8 +42,8 @@ void setup() {
     Serial.begin(SERIAL_BAUD);
 
     // Initialize SPIFFS
-    if(!SPIFFS.begin(true)){
-    Serial.println("An Error has occurred while mounting SPIFFS");
+    if(!LittleFS.begin(true)){
+    Serial.println("An Error has occurred while mounting LittleFS");
     return;
     }
     // Card 1: configure LED ON/OFF properties

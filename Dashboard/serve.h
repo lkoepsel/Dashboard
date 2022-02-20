@@ -9,7 +9,7 @@
 
 #include <WiFi.h>
 #include <ESPAsyncWebServer.h>
-#include <SPIFFS.h>
+#include <LittleFS.h>
 #include "home.h"
 #include "card_1.h"
 #include "card_0.h"
