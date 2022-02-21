@@ -15,13 +15,11 @@ To add a card, you need to do the following:
 2) Add card_n content to index.html, again, duplicate and edit a card section on the index.html
 3) Add a call to card_n(server) in serve.cpp, as in "card_n(serve);"
 4) Add template processing to processor.cpp. This is a bit more complicated and based on what you want to accomplish. The function processor is used to replace %template% variables with data. More on this later.
-### blink:
-* basic blink program used to test tool chain, test IDE, test board, just to good to have at my fingertips... :)
 ### Dashboard
 The main code for development. The goal is to have a easy to maintain and easy to expand Access Point web page-based Dashboard. 
 ### LFS_util
 LittleFS utility to print out the bytes used and free. Based on a sketch by [Mischanti Renzo](https://www.mischianti.org/2021/04/01/esp32-integrated-littlefs-filesystem-5/#LittleFS_File_System)
-Sample Output
+#### Sample Output
 ```
 Initializing FS...done.
 File system info:
@@ -40,6 +38,8 @@ File system info:
         switch-open.svg           858
 ```
 For more information as to why LittleFS, see [joltwallet on Github](https://github.com/joltwallet/esp_littlefs)
+### blink:
+* basic blink program used to test tool chain, test IDE, test board, just to good to have at my fingertips... :)
 ## Boards
 * [Adafruit Feather ESP32](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/overview)
 * [Dev Board from DOIT] - Identifies as a NodeMCU-32S
@@ -51,8 +51,10 @@ For more information as to why LittleFS, see [joltwallet on Github](https://gith
 * [ESP32: integrated LittleFS FileSystem](https://www.mischianti.org/2021/04/01/esp32-integrated-littlefs-filesystem-5/#LittleFS_File_System)
 
 ## Notes (YYMMDD)
+### 220221: LittleFS Utility added
+See sample output above. Use serial monitor to gather information about installed files on the ESP32 via LittleFS.
 ### 220220: SPIFFS -> LittleFS
-Switched from SPIFFS to LittleFS, it appears that LittleFS is faster (2-3x) and more reliable. Haven't confirmed either, however, no issues after switching.
+Switched from SPIFFS to LittleFS, it [appears that LittleFS is faster (2-3x)](https://github.com/joltwallet/esp_littlefs) and more reliable. Haven't confirmed either, however, no issues after switching.
 1. The latest 2.0.2 code has LittleFS capabilities, however, it is critical to spell correctly as shown, **LittleFS**. It is not LITTLEFS (all-caps). Replaced (*already performed*) all references from SPIFFS and SPIFFS.h to LittleFS and LittleFS.h.
 2. A new tool is required: [Arduino ESP32 filesystem uploader](https://github.com/lorol/arduino-esp32fs-plugin), download the latest, extract and replace esp32fs.jar in the Arduino/tools folder then restart the IDE.
 3. Once IDE is restarted, I found I needed to erase all Flash to get things to work. It is in the dropdown shown when *ESP32 Sketch Data Upload* is selected, it is at the very bottom. Perform this step then select *ESP32 Sketch...* and use the LittleFS selection to upload the data folder.
