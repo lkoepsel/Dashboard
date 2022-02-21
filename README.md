@@ -19,7 +19,27 @@ To add a card, you need to do the following:
 * basic blink program used to test tool chain, test IDE, test board, just to good to have at my fingertips... :)
 ### Dashboard
 The main code for development. The goal is to have a easy to maintain and easy to expand Access Point web page-based Dashboard. 
+### LFS_util
+LittleFS utility to print out the bytes used and free. Based on a sketch by [Mischanti Renzo](https://www.mischianti.org/2021/04/01/esp32-integrated-littlefs-filesystem-5/#LittleFS_File_System)
+Sample Output
+```
+Initializing FS...done.
+File system info:
+        Total:    1507328 bytes
+        Used:      315392 bytes
+        Free:     1191936 bytes
 
+        favicon.png               717
+        gauge.min.js.map       229040
+        gauge.min.js            44751
+        index.html               2547
+        lightbulb.svg             547
+        script.js                3623
+        style.css                1782
+        switch-closed.svg         738
+        switch-open.svg           858
+```
+For more information as to why LittleFS, see [joltwallet on Github](https://github.com/joltwallet/esp_littlefs)
 ## Boards
 * [Adafruit Feather ESP32](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/overview)
 * [Dev Board from DOIT] - Identifies as a NodeMCU-32S
@@ -28,6 +48,7 @@ The main code for development. The goal is to have a easy to maintain and easy t
 * [arduino-esp32 examples](https://github.com/espressif/arduino-esp32/tree/master/libraries/WiFi/examples)
 * [ESPAsyncWebServer on Github](https://github.com/me-no-dev/ESPAsyncWebServer)
 * [Random Nerd Tutorial ESP32 Web Manager](https://randomnerdtutorials.com/esp32-wi-fi-manager-asyncwebserver/)
+* [ESP32: integrated LittleFS FileSystem](https://www.mischianti.org/2021/04/01/esp32-integrated-littlefs-filesystem-5/#LittleFS_File_System)
 
 ## Notes (YYMMDD)
 ### 220220: SPIFFS -> LittleFS
