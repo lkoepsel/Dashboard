@@ -51,6 +51,15 @@ For more information as to why LittleFS, see [joltwallet on Github](https://gith
 * [ESP32: integrated LittleFS FileSystem](https://www.mischianti.org/2021/04/01/esp32-integrated-littlefs-filesystem-5/#LittleFS_File_System)
 
 ## Notes (YYMMDD)
+### 220302: LittleFS Requirements
+In order to use LittlFS, you need two things: 1) Arduino IDE tools to upload data and 2) Arduino framework tools to use LittleFS in your code:
+Here are some things to check for, the first digit represents the numbers above and the second digit indicates a specific element:
+        1.1 In ~/.arduino15/packages/esp32/tools, there needs to be *mklittlefs*, this is the tool which will make a littlefs filesystem
+        1.2 The .jar file in /home/lkoepsel/Arduino/tools/ESP32FS/tool/ must be replaced by the [one on github](https://github.com/lorol/arduino-esp32fs-plugin), otherwise the three options will not appear in the Arduino dropdown Tools -> ESP32 Sketch Data Upload
+        2.1 The Arduino core package as of v2.00 now contains LittleFS.h as indicated by [this note](https://github.com/lorol/LITTLEFS#ths-library-is-now-part-of-arduino-esp32-core-v2). Make sure your IDE and arduino-cli are both version 2.0 or higher. The one I use is *2.0.2*
+        2.2 The actual header file required to use LittleFS is located here: /home/
+        lkoepsel/.arduino15/packages/esp32/hardware/esp32/2.0.2/libraries/LittleFS/src
+Check all four elements and make sure they exist/or are correct.
 ### 220221: LittleFS Utility added
 See sample output above. Use serial monitor to gather information about installed files on the ESP32 via LittleFS.
 ### 220220: SPIFFS -> LittleFS
