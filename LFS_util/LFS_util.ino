@@ -10,6 +10,9 @@
 #include "FS.h"
 #include <LittleFS.h>
 
+// Serial Port Constants and Variables
+#define SERIAL_BAUD 921600
+
 const int buf_size = 32; 
 char s[buf_size];
 
@@ -17,7 +20,7 @@ void printDirectory(File dir, int numTabs = 1);
  
 void setup()
 {
-    Serial.begin(115200);
+    Serial.begin(SERIAL_BAUD);
  
     delay(500);
  

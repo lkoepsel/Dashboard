@@ -57,7 +57,7 @@ void setup() {
 
     Serial.begin(921600);
     Serial.println();
-    Serial.println("Configuring access point...");
+    Serial.println("Configuring wireless...");
 
     WiFi.softAP(ssid, password);
     IPAddress myIP = WiFi.softAPIP();
