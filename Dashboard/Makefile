@@ -1,0 +1,19 @@
+BOARD=esp32:esp32:featheresp32
+PORT=/dev/ttyUSB0
+BUILD=build
+
+.PHONY: default lint all flash clean
+
+default: all flash clean
+
+lint:
+	cpplint --extensions=ino --filter=-legal/copyright *.ino
+
+all:
+	arduino-cli compile --fqbn $(BOARD) --output-dir $(BUILD) ./
+
+flash:
+	arduino-cli upload --fqbn $(BOARD) --port $(PORT) --input-dir $(BUILD)
+
+clean:
+	rm -r build
