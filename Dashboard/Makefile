@@ -1,5 +1,5 @@
 BOARD=esp32:esp32:featheresp32
-PORT=/dev/ttyUSB0
+PORT=/dev/cu.usbserial*
 BUILD=build
 
 .PHONY: default lint all flash clean
