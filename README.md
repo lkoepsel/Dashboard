@@ -5,7 +5,7 @@ Based the ESP32 SoC using the Arduino Framework, Random Nerd Tutorials and the E
 3) Like RNT's example, this dashboard uses the concept of *cards*, with this approach using one card per file (actually two files card_n.h and card_n.cpp).
 
 Additional information for this project will be on my website:
-* [wellys.com - Automation](https://wellys.com/posts/automation/)
+* [wellys.com - ESP32: Automation](https://wellys.com/posts/automation/)
 * [wellys.com - ESP32: Using a modular approach](https://wellys.com/posts/esp32_modules/)
 * [wellys.com - ESP32: Solving Issues with Arduino Development](https://wellys.com/posts/esp32_issues/)
 * [wellys.com - ESP32: Using arduino-cli](https://wellys.com/posts/esp32_cli/)
@@ -52,6 +52,14 @@ For more information as to why LittleFS, see [joltwallet on Github](https://gith
 * [ESP32: integrated LittleFS FileSystem](https://www.mischianti.org/2021/04/01/esp32-integrated-littlefs-filesystem-5/#LittleFS_File_System)
 
 ## Notes (YYMMDD)
+### 220313: Change to makefile 
+Please see this [entry on Wellys](https://wellys.com/posts/automation/) for a full explanation. I changed the build approach from a *custom Sublime Text build*, to a more standardized approach using *make*. What is **NOT** included in this repository is a file called *env.make*:
+```make
+board = esp32:esp32:featheresp32
+port = /dev/cu.usbserial*
+build = build
+```
+The *makefile* in the repository will include this file to capture the local environmental variables.
 ### 220302: LittleFS Requirements
 In order to use LittleFS, you need two things:
 
