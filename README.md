@@ -5,9 +5,10 @@ Based the ESP32 SoC using the Arduino Framework, Random Nerd Tutorials and the E
 3) Like RNT's example, this dashboard uses the concept of *cards*, with this approach using one card per file (actually two files card_n.h and card_n.cpp).
 
 Additional information for this project will be on my website:
-* [wellys.com - ESP32 Modules](https://wellys.com/posts/esp32_modules/)
-* [wellys.com - ESP32 Issues](https://wellys.com/posts/esp32_issues/)
-* [wellys.com - ESP32 Using arduino-cli](https://wellys.com/posts/esp32_cli/)
+* [wellys.com - Automation](https://wellys.com/posts/automation/)
+* [wellys.com - ESP32: Using a modular approach](https://wellys.com/posts/esp32_modules/)
+* [wellys.com - ESP32: Solving Issues with Arduino Development](https://wellys.com/posts/esp32_issues/)
+* [wellys.com - ESP32: Using arduino-cli](https://wellys.com/posts/esp32_cli/)
 ## Code:
 Here is a high level approach to adding to this code. Each new sensor will require a *card*. Cards are sections on the homepage which either report a value or allow a control to make a change on the ESP32 (for example, a slider on a card, dims an LED).
 To add a card, you need to do the following:
