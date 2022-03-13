@@ -1,6 +1,5 @@
-BOARD=esp32:esp32:featheresp32
-PORT=/dev/cu.usbserial*
-BUILD=build
+
+include env.make
 
 .PHONY: default lint all flash clean
 
