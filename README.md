@@ -52,6 +52,16 @@ For more information as to why LittleFS, see [joltwallet on Github](https://gith
 * [ESP32: integrated LittleFS FileSystem](https://www.mischianti.org/2021/04/01/esp32-integrated-littlefs-filesystem-5/#LittleFS_File_System)
 
 ## Notes (YYMMDD)
+### 220331: Added Dallas Semi and OneWire to Card 4
+I integrated the code from [RNT:DS18B20 Async Web Server](https://randomnerdtutorials.com/guide-for-ds18b20-temperature-sensor-with-arduino/) into Dashboard. This includes changes to:
+* Dashboard.ino
+* data/index.html
+* data/script.js
+* processor.cpp
+* added card_4.cpp
+* added card_4.h
+It was difficult to determine where some of the code would reside as there were multiple errors of "...previously defined..." which needed to be resolved. Ultimately, I placed the DallasSemi code in Dashboard.ino to be set up as a global variable. I haven't been able to test the code, not having the right chips.
+
 ### 220313: Change to makefile 
 Please see this [entry on Wellys](https://wellys.com/posts/automation/) for a full explanation. I changed the build approach from a *custom Sublime Text build*, to a more standardized approach using *make*. What is **NOT** included in this repository is a file called *env.make*:
 ```make
