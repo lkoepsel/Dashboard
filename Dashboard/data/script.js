@@ -151,3 +151,26 @@ if (!!window.EventSource) {
   }, false);
 }
 // ***** End ***** card_3 script functions 
+
+// ***** Start ***** card_4 script functions 
+  setInterval(function ( ) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("temperaturec").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "/temperaturec", true);
+    xhttp.send();
+  }, 10000) ;
+  setInterval(function ( ) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("temperaturef").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "/temperaturef", true);
+    xhttp.send();
+  }, 10000) ;
+// ***** End ***** card_4 script functions 

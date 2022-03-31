@@ -1,4 +1,5 @@
 #include "processor.h"
+#include "card_4.h"
 
 const char* slider_input = "value";
 String sliderValue = "0";
@@ -42,5 +43,9 @@ String processor(const String& var){
       return sliderValue;
     }
 
+    // Card 4 Processing
+    if(var == "TEMPERATUREF"){
+    return temperatureF;
+  }
     return String();
 }
